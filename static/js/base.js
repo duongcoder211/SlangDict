@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: targetElement.offsetTop - 90,
                     behavior: 'smooth'
                 });
             }
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.15)';
         });
         
-        element.addEventListener('mouseenter', function() {
+        element.addEventListener('mouseover', function() {
             // Небольшой эффект при наведении
             this.style.transform = 'perspective(1000px) scale(1.02)';
         });

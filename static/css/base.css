@@ -159,7 +159,8 @@ nav a:hover {
 
 /* Герой секция */
 .hero {
-    padding: 8rem 5% 8rem; /* Размер первого экрана */
+    /* Размер первого экрана */
+    padding: 8rem 5% 8rem;
     text-align: center;
     max-width: 1000px;
     margin: 0 auto;
@@ -211,7 +212,7 @@ nav a:hover {
 /* Секция контента */
 .content {
     background-color: var(--light-bg);
-    padding: 5rem 5%;
+    padding: 2rem 5%;
     border-radius: 25px 25px 0 0;
     box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.05);
     margin-top: 3rem;
@@ -427,11 +428,13 @@ footer {
 .footer-column h3::after {
     content: '';
     position: absolute;
-    width: 40px;
-    height: 3px;
+    width: 50px;
+    height: 2px;
     background-color: var(--accent-color);
     bottom: 0;
     left: 0;
+    display: block;
+    z-index: 10;
 }
 
 .footer-column p {
@@ -537,6 +540,7 @@ footer {
     justify-items: center;
     align-items: center;
     gap: 20px;
+    z-index: 1000;
 }
 
 /* Go top top */
@@ -576,7 +580,7 @@ footer {
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 10000;
 }
 
 .go-top:hover, .chatbot-button:hover {
@@ -602,13 +606,13 @@ footer {
     overflow: hidden;
     display: none;
     flex-direction: column;
-    z-index: 1000;
     transition: all 0.3s ease;
 }
 
 .chatbot-container.active {
     display: flex;
     animation: slideIn 0.3s ease-out;
+    z-index: 1000;
 }
 
 @keyframes slideIn {
@@ -874,11 +878,11 @@ footer {
 }
 
 /* Адаптивность */
-@media (min-width: 1500px) {
+@media (min-width: 1600px) {
     .chatbot-container {
         width: 90vw;
         height: 80vh;
-        right: 5vw;
+        right: 6vw;
         bottom: 50px;
     }
 
@@ -891,6 +895,22 @@ footer {
 
     html {
         font-size: 20px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .chatbot-container {
+        width: 90vw;
+        height: 80vh;
+        right: 6vw;
+        bottom: 50px;
+    }
+
+    .go-top i {
+        font-size: 2.2rem;
+        padding: 8px 8px 8px;
+        height: 60px;
+        width: 60px;
     }
 }
 
