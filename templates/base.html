@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', path='images/Books-Library.png') }}" type="image/x-icon">
+    {% block title %}{% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- For FastAPI (path) -->
+    <link rel="stylesheet" href="{{url_for('static', path = 'css/base.css')}}">
+    <!-- For Flask (filename) -->
+    <!-- <link rel="stylesheet" href="{2 url_for('static', filename = 'css/base.css') 2}">-->
+</head>
+
+<body>
+    <!-- Упрощенный анимированный фон -->
+    <div class="background-container">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Шапка с навигацией -->
+    <header>
+        <div class="logo">
+            <!-- <i class="fas fa-palette"></i> -->
+            <i class="fa-solid fa-book"></i>
+            <span>Личный проект</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#features">Возможности</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Герой секция -->
+    <section class="hero" id="home">
+        <h1>Словарь молодёжных<br>сленговых слов</h1>
+        <p>Этот сайт демонстрирует самые популярные молодёжные сленговые слова, которые часто встречается в чате, в интернете и даже в ежедневной рече у молодых людей</p>
+        
+        <div class="author-info">
+            <div class="author-avatar-placeholder">
+                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="35" cy="35" r="35" fill="#4fc3a1"/>
+                    <path d="M35 20C40 20 44 24 44 29C44 34 40 38 35 38C30 38 26 34 26 29C26 24 30 20 35 20ZM35 42C45 42 53 47 53 52V53H17V52C17 47 25 42 35 42Z" fill="white"/>
+                </svg>
+            </div>
+            <div class="author-details">
+                <h3>Дао Мань Зыонг</h3>
+                <p>Студент университета ИТМО</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Секция контента -->
+    <section class="content">
+        {% block content %}{% endblock %}
+        <div class="content-container">
+            <h2 class="section-title fade-in" id="features">Основные возможности</h2>
+            <div class="features">
+                <div class="feature-card fade-in" id="card1">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3>Чат с ИИ</h3>
+                    <p>В этом сайте интеграция с ИИ, который позволяет удобно найти значение сленговых слов при встрече абсолютно новое слово. Это помогает нам улучшить сленговых запас.</p>
+                </div>
+                
+                <div class="feature-card fade-in" id="card2">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Гармоничные цвета</h3>
+                    <p>Тщательно подобранная цветовая палитра создает приятное ощущение для глаз и улучшает пользовательский опыт. Наведите курсор на разные зоны карточки.</p>
+                </div>
+                
+                <div class="feature-card fade-in" id="card3">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Адаптивный дизайн</h3>
+                    <p>Сайт идеально работает на всех устройствах. Эффект качели также работает на сенсорных устройствах. Попробуйте навести курсор на углы карточки.</p>
+                </div>
+            </div>
+            
+            <div class="about-project fade-in" id="about-project">
+                <h3>О проекте и эффекте качели</h3>
+                <p>Этот сайт создан для демонстрации сленговых слов, которые мы часто встречаем в чате или в разговорной с молодёжными русскими людьми.</p>
+                <p>Этот проект построен с помощью фронтенда (HTML, CSS, JS) and Бэкэнда (FastAPI). Все это я обучен на практике по Програмированию на Питоне, Проекной школе и Промпт-инженерии. И теперь я стараюсь применить всё полученное от тех предмедтов знание к практике.</p>
+                <p>Источник вдохновения начинается из того, что скоро будет конференция КМУ на теме молодёжных сленговых слов. И также я практикую работать над проэктом.</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="buttons">
+        <!-- Кнопка чат-бота -->
+        <div class="chatbot-button" id="chatbotButton">
+            <i class="fas fa-robot"></i>
+        </div>
+
+        <!-- Контейнер чат-бота -->
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chat-header">
+                <h3><i class="fas fa-robot"></i> Чат с AI</h3>
+                <button class="close-btn" id="closeBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="chat-body" id="chatBody" markdown="1">
+                <!-- Сообщения будут добавлены сюда -->
+            </div>
+
+            <div class="chat-footer">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Введите ваш вопрос...">
+                <button class="send-btn" id="sendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Go to top button -->
+        <div class="go-top">
+            <a href="#indexes"><i class="fa-solid fa-angle-up"></i></a>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Обо мне</h3>
+                <p>Я практикую разработать современные веб-сайты с креативным дизайном и оптимизированным пользовательским опытом.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-map-marker-alt"></i>&nbsp;Пер. Вяземский, Cанкт-Петербург</p>
+                <p><i class="fas fa-phone"></i>&nbsp;+7 (911) 030 20 50</p>
+                <p><i class="fas fa-envelope"></i>&nbsp;daomanhduong2112005@gmail.com</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Быстрые ссылки</h3>
+                <p><a href="#home" style="color: white; text-decoration: none;">Главная</a></p>
+                <p><a href="#about" style="color: white; text-decoration: none;">Обо мне</a></p>
+                <p><a href="#features" style="color: white; text-decoration: none;">Возможности</a></p>
+                <p><a href="#contact" style="color: white; text-decoration: none;">Контакты</a></p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2026 Личный проект. Все права защищены. Разработано Зыонгом.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="{{ url_for('static', path='js/base.js') }}"></script>
+</body>
+

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Сленговый словарь</title>{% endblock %}
+{% block content %}
+<div class="content-container">
+    <h2 class="section-title fade-in" style="margin-bottom: 1.8rem;" id="indexes">Индексы</h2>
+    <div class="char-indexes fade-in">
+        {% for char in fisrt_chars %}
+            <a href="#card-{{char}}">{{char}}</a>
+        {% endfor %}
+    </div>
+    <h2 class="section-title fade-in">Контенты</h2>
+    <div class="slang-сontents">
+        {% for item in key_slangs %}
+            <div class="content-card fade-in" id="card-{{item.char}}">
+            <div class="content-icon">
+                    <h2>{{item.char}}</h2>
+                </div>
+                <ul type="none">
+                    {% for slang in item.slangs %}
+                    <li><strong>{{ slang[0].slang }}</strong> - {{ slang[0].mean }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

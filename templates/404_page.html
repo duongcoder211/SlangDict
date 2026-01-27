@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', path='images/moon.png') }}" type="image/x-icon">
+    <title>Page Not Found</title>
+</head>
+<body>
+    <div class="wrapper" style="margin: 0 auto; text-align: center;">
+        <div id="404_image">
+            <img src="{{ url_for('static', path = 'images/404_image.png') }}" draggable="false" alt="404_image" style="object-fit: cover; max-height: 90vh; width: auto;">
+        </div>
+        <div>
+            <a href="/" style="text-align: center;">Back to home page</a>
+        </div>
+    </div>  
+</body>
+</html>
+
