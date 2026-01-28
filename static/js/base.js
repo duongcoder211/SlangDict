@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.15)';
         });
         
-        element.addEventListener('mouseover', function() {
+        element.addEventListener('mouseenter', function() {
             // Небольшой эффект при наведении
             this.style.transform = 'perspective(1000px) scale(1.02)';
         });
@@ -85,7 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Применяем эффект ко всем карточкам и блоку about
     const cards = document.querySelectorAll('.feature-card, .about-project, .content-card');
     cards.forEach(card => {
-        createSwingEffect(card);
+        const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);
+        if (!isMobile) {
+            createSwingEffect(card);
+            // console.log("Laptop");
+        }
+        // else {
+        //     console.log("Phone");
+        // }
     });
     
     // Демонстрация эффекта при загрузке
