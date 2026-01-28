@@ -549,7 +549,7 @@ footer {
     width: 60px;
     height: 60px;
     border-radius: 100%;
-    background-image: linear-gradient(45deg, #84fab0, #8fd3f4);
+    background-image: linear-gradient(45deg, #a1c4fd, #c2e9fb);
     text-align: center;
     display: flex;
     align-content: center;
@@ -563,7 +563,8 @@ footer {
 
 .go-top i {
     font-size: 2.2rem;
-    color: var(--primary-color);
+    /* color: var(--primary-color); */
+    color: white;
     transition: transform 0.3s;
     line-height: 100%;
     border-radius: 100%;
@@ -575,7 +576,7 @@ footer {
 .chatbot-button {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #3498db, #2c3e50);
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -789,6 +790,7 @@ footer {
     table-layout: auto; 
     border-collapse: collapse;
     word-wrap: break-word;
+    margin: 8px 0 8px;
 }
 
 .message-content thead th {
@@ -901,10 +903,10 @@ footer {
 
 @media (max-width: 1600px) {
     .chatbot-container {
-        width: 80vw;
+        width: 82vw;
         height: 80vh;
-        right: 10vw;
-        bottom: 20px;
+        right: 8vw;
+        bottom: 26px;
     }
 
     .go-top i {
