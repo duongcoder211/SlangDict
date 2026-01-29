@@ -11,7 +11,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 origins = [
-    "http://slangdict.onrender.com",
+    "https://slangdict.onrender.com",
 ]
 
 app.add_middleware(
