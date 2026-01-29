@@ -739,6 +739,10 @@ footer {
     margin: 0;
     padding: 0;
 }
+.message-content hr {
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
 /* .message-content table {
     display: flex;
     flex-direction: column;
@@ -779,10 +783,7 @@ footer {
     font-size: var(--th-td-size);
     border: 1px solid #ccc;
 }
-.message-content hr {
-    margin-top: 8px;
-    margin-bottom: 4px;
-} */
+*/
 
 .message-content table {
     width: 100%;
@@ -911,6 +912,12 @@ footer {
 
     .go-top i {
         padding: 12px 15px 12px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content-card {
+        padding: 0 1rem 2rem;
     }
 }
 
